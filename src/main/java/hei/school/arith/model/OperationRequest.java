@@ -1,3 +1,3 @@
 package hei.school.arith.model;
 
-public record OperationRequest(double a, double b) {}
+public record OperationRequest(long a, long b) {}

@@ -15,33 +15,38 @@ class DivisionServiceTest {
 
   @Test
   void divide_two_positive_numbers() {
-    assertEquals(2.0, divisionService.divide(6, 3));
+    assertEquals(2L, divisionService.divide(6L, 3L));
   }
 
   @Test
-  void divide_gives_decimal_result() {
-    assertEquals(2.5, divisionService.divide(5, 2));
+  void divide_with_integer_result() {
+    assertEquals(2L, divisionService.divide(5L, 2L));
   }
 
   @Test
   void divide_positive_by_negative() {
-    assertEquals(-3.0, divisionService.divide(9, -3));
+    assertEquals(-3L, divisionService.divide(9L, -3L));
   }
 
   @Test
   void divide_two_negatives() {
-    assertEquals(3.0, divisionService.divide(-9, -3));
+    assertEquals(3L, divisionService.divide(-9L, -3L));
   }
 
   @Test
   void divide_by_zero_throws_exception() {
     ArithmeticException ex =
-        assertThrows(ArithmeticException.class, () -> divisionService.divide(5, 0));
+        assertThrows(ArithmeticException.class, () -> divisionService.divide(5L, 0L));
     assertEquals("Division by zero is not allowed", ex.getMessage());
   }
 
   @Test
   void divide_zero_by_number() {
-    assertEquals(0.0, divisionService.divide(0, 5));
+    assertEquals(0L, divisionService.divide(0L, 5L));
+  }
+
+  @Test
+  void divide_large_numbers() {
+    assertEquals(1_000_000L, divisionService.divide(1_000_000_000_000L, 1_000_000L));
   }
 }

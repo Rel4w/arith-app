@@ -4,8 +4,7 @@ import org.springframework.stereotype.Service;
 
 @Service
 public class SubtractionService {
-
-  public double subtract(double a, double b) {
+  public long subtract(long a, long b) {
     return a - b;
   }
 }

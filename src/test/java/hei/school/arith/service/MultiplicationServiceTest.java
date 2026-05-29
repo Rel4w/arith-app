@@ -14,26 +14,31 @@ class MultiplicationServiceTest {
 
   @Test
   void multiply_two_positive_numbers() {
-    assertEquals(6.0, multiplicationService.multiply(2, 3));
+    assertEquals(6L, multiplicationService.multiply(2L, 3L));
   }
 
   @Test
   void multiply_positive_and_negative() {
-    assertEquals(-6.0, multiplicationService.multiply(2, -3));
+    assertEquals(-6L, multiplicationService.multiply(2L, -3L));
   }
 
   @Test
   void multiply_two_negatives() {
-    assertEquals(6.0, multiplicationService.multiply(-2, -3));
+    assertEquals(6L, multiplicationService.multiply(-2L, -3L));
   }
 
   @Test
   void multiply_by_zero() {
-    assertEquals(0.0, multiplicationService.multiply(99, 0));
+    assertEquals(0L, multiplicationService.multiply(99L, 0L));
   }
 
   @Test
   void multiply_by_one() {
-    assertEquals(5.0, multiplicationService.multiply(5, 1));
+    assertEquals(5L, multiplicationService.multiply(5L, 1L));
+  }
+
+  @Test
+  void multiply_large_numbers() {
+    assertEquals(1_000_000_000_000L, multiplicationService.multiply(1_000_000L, 1_000_000L));
   }
 }
