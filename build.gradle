@@ -148,13 +148,3 @@ dependencies {
 
 
 }
-
-tasks.withType(Test).configureEach {
-    jvmArgs '-XX:+EnableDynamicAgentLoading'
-    jvmArgs '-Djdk.instrument.traceUsage=false'
-}
-
-tasks.withType(Test).configureEach {
-    jvmArgs '-XX:+EnableDynamicAgentLoading'
-    jvmArgs '-Xshare:off'
-}
