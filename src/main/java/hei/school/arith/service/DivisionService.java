@@ -4,8 +4,7 @@ import org.springframework.stereotype.Service;
 
 @Service
 public class DivisionService {
-
-  public double divide(double a, double b) {
+  public long divide(long a, long b) {
     if (b == 0) {
       throw new ArithmeticException("Division by zero is not allowed");
     }

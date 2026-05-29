@@ -4,8 +4,7 @@ import org.springframework.stereotype.Service;
 
 @Service
 public class AdditionService {
-
-  public double add(double a, double b) {
+  public long add(long a, long b) {
     return a + b;
   }
 }

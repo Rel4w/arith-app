@@ -14,26 +14,31 @@ class SubtractionServiceTest {
 
   @Test
   void subtract_two_positive_numbers() {
-    assertEquals(1.0, subtractionService.subtract(3, 2));
+    assertEquals(1L, subtractionService.subtract(3L, 2L));
   }
 
   @Test
   void subtract_gives_negative() {
-    assertEquals(-1.0, subtractionService.subtract(2, 3));
+    assertEquals(-1L, subtractionService.subtract(2L, 3L));
   }
 
   @Test
   void subtract_two_negatives() {
-    assertEquals(1.0, subtractionService.subtract(-2, -3));
+    assertEquals(1L, subtractionService.subtract(-2L, -3L));
   }
 
   @Test
   void subtract_zero() {
-    assertEquals(5.0, subtractionService.subtract(5, 0));
+    assertEquals(5L, subtractionService.subtract(5L, 0L));
   }
 
   @Test
   void subtract_same_numbers() {
-    assertEquals(0.0, subtractionService.subtract(7, 7));
+    assertEquals(0L, subtractionService.subtract(7L, 7L));
+  }
+
+  @Test
+  void subtract_very_large_numbers() {
+    assertEquals(0L, subtractionService.subtract(Long.MAX_VALUE, Long.MAX_VALUE));
   }
 }

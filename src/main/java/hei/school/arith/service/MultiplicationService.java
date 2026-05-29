@@ -4,8 +4,7 @@ import org.springframework.stereotype.Service;
 
 @Service
 public class MultiplicationService {
-
-  public double multiply(double a, double b) {
+  public long multiply(long a, long b) {
     return a * b;
   }
 }
